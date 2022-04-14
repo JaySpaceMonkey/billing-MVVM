@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BillingMVVM</string>
+    <string name="name">name</string>
+    <string name="add">ADD</string>
+    <string name="mrp">MRP :</string>
+    <string name="gst">GST :</string>
+</resources>
