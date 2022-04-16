@@ -31,9 +31,9 @@ class MainActivity : AppCompatActivity() {
          viewModel=ViewModelProvider(this,viewModelFactory).get(MainActivityViewModel::class.java)
         viewModel.getItem()
         viewModel.myResponse.observe(this, Observer{ response ->
-            if (response.isSuccessful && response.body() != null){
-
-                 contentAdapter.ContentListItem=response.body()!!
+            if (response.isSuccessful && response.body()?.data?.items != null){
+                 Log.d("Response",response.raw().toString())
+                 contentAdapter.ContentListItem=response.body()!!.data.items
                 Toast.makeText(
                     this,
                     "hola",
