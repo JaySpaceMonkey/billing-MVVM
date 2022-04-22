@@ -6,28 +6,28 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.billingmvvm.databinding.CardInContentsBinding
-import com.example.billingmvvm.model.RecyclerList
+import com.example.billingmvvm.model.ModelClass
 
 class ContentAdapter : RecyclerView.Adapter<ContentAdapter.ContentViewHolder>() {
 
-    private val diffCallback = object : DiffUtil.ItemCallback<RecyclerList.Items>() {
+    private val diffCallback = object : DiffUtil.ItemCallback<ModelClass.Data.Item>() {
         override fun areItemsTheSame(
-            oldItem: RecyclerList.Items,
-            newItem: RecyclerList.Items
+            oldItem: ModelClass.Data.Item,
+            newItem: ModelClass.Data.Item
         ): Boolean {
             return oldItem.id == newItem.id
         }
 
         override fun areContentsTheSame(
-            oldItem: RecyclerList.Items,
-            newItem: RecyclerList.Items
+            oldItem: ModelClass.Data.Item,
+            newItem: ModelClass.Data.Item
         ): Boolean {
 
             return oldItem == newItem
         }
     }
     private val differ = AsyncListDiffer(this, diffCallback)
-    var ContentListItem: List<RecyclerList.Items>
+    var ContentListItem: List<ModelClass.Data.Item>
         get() = differ.currentList
         set(value) {
             differ.submitList(value)

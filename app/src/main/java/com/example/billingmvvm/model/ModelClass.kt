@@ -1,7 +1,7 @@
 package com.example.billingmvvm.model
 
 data class ModelClass(
-    val `data`: Data
+    val data: Data
 ) {
     data class Data(
         val items: List<Item>
@@ -11,13 +11,13 @@ data class ModelClass(
             val cType: String,
             val category: String,
             val cid: String,
-            val `data`: String,
+            val data: String,
             val groupId: String,
             val gst: Int,
-            val hsnCode: Int,
+            val hsnCode: Double,
             val id: String,
             val inStock: Boolean,
-            val mrp: Int,
+            val mrp: Double,
             val name: String,
             val packaging: String,
             val ptr: Double,
